@@ -1,0 +1,21 @@
+<div class="detail-container">
+    <img src="{{product.url}}" alt="{{product.url}}">
+    <div class="detail-item">
+        <p>{{product.name}}</p>
+        <p>{{product.description}}</p>
+        <p>{{product.price}}</p>
+        <select #selector name="productItemSelect" id="product-to-cart" class="select-input">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+        <br>
+        <button>Add to Cart</button>
+        <br>
+        <br>
+        <a routerLink="/" class="back-link">Back to List</a>
+    </div>
+</div>
