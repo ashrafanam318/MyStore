@@ -10,6 +10,10 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
   totalPrice: string = "0.00";
+  userFullName: string = "";
+  userAddress: string = "";
+  userCardNo: string = "";
+  checkout: boolean = false;
 
   constructor(private cartService: CartService) { }
 
@@ -37,5 +41,14 @@ export class CartComponent implements OnInit {
   onQuantityChange(e: {cartItemId: number, quantity: number}): void {
     this.cartService.updateQuantityById(e.cartItemId, e.quantity);
     this.loadCartItems();
+  }
+
+  onSubmit(): void {
+    this.checkout = true;
+  }
+
+  onBackToProducts(): void {
+    this.checkout = false;
+    this.clearCart();
   }
 }

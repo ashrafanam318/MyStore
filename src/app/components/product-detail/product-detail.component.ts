@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
 import { Product } from 'src/app/models/Product';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -28,7 +27,7 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  setQuantity(q: string): void {
+  addToCart(q: string): void {
     this.cartService.setCartItem(this.product, Number(q));
   }
 }

@@ -7,7 +7,10 @@
     <p>{{product.price}}</p>
     <br>
 
-    <input type="number" value="1"  class="select-input" #quantity>
+    <!-- <input type="number" value="1"  class="select-input" #quantity> -->
+    <select class="select-input" #quantity name="selector" id="product-item-quantity-pi">
+        <option *ngFor="let i of selectOptions" value="{{i}}">{{i}}</option>
+    </select>
 
-    <button (click)="setQuantity(quantity.value)">Add to Cart</button>
+    <button (click)="addToCart(quantity.value)">Add to Cart</button>
 </div>

@@ -23,3 +23,14 @@
     display: flex;
     align-self: auto;
   }
+  .number-input {
+    width: 80px;
+    text-align: center;
+  }
+
+  .text-input {
+    min-width: 200px;
+    height: 20px;
+    padding: 8px;
+    border-radius: 8px;
+  }
