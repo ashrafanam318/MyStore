@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { CartItem } from 'src/app/models/CartItem';
 
 @Component({
@@ -7,11 +7,16 @@ import { CartItem } from 'src/app/models/CartItem';
   styleUrls: ['./cart-item-list.component.css']
 })
 export class CartItemListComponent implements OnInit {
-  @Input() cartItems: CartItem[] = []
+  @Input() cartItems: CartItem[] = [];
+  @Output() quantityChange: EventEmitter<{cartItemId: number, quantity: number}> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
     
+  }
+
+  onQuantityChange(e: {cartItemId: number, quantity: number}): void {
+    this.quantityChange.emit(e);
   }
 
 }

@@ -1,8 +1,9 @@
 <div class="cart-container">
     <div class="cart-panel">
-        <app-cart-item-list [cartItems]="cartItems"></app-cart-item-list>
+        <app-cart-item-list [cartItems]="cartItems" (quantityChange)="onQuantityChange($event)"></app-cart-item-list>
         <br>
-        <h3>Total Price: $100.00</h3>
+        <h3>Total Price: ${{totalPrice}}</h3>
+        <button (click)="clearCart()">Clear Cart</button>
     </div>
 
     <div class="cart-panel">

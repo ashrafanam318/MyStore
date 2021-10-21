@@ -5,6 +5,12 @@
         <br>
         <span>{{cartItem.price}}</span>
         <br>
-        <input type="number" class="number-input" value="{{cartItem.quantity}}">
+        <input 
+            #quantityInput 
+            type="number" 
+            class="number-input" 
+            value="{{cartItem.quantity}}" 
+            (change)="onQuantityChange(quantityInput.value)"
+        >
     </div>
 </div>
