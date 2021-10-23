@@ -21,10 +21,12 @@ export class CartComponent implements OnInit {
     this.loadCartItems();
   }
 
-  clearCart(): void {
+  clearCart(withAlert: boolean = true): void {
     this.cartItems = [];
     this.totalPrice = "0.00";
     this.cartService.clearCart();
+
+    if (withAlert) alert("Removed all items from the cart!")
   }
 
   loadCartItems(): void {
@@ -49,6 +51,6 @@ export class CartComponent implements OnInit {
 
   onBackToProducts(): void {
     this.checkout = false;
-    this.clearCart();
+    this.clearCart(false);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-confirmation',
@@ -13,13 +14,13 @@ export class CartConfirmationComponent implements OnInit {
   
   @Output() backToProducts: EventEmitter<boolean> = new EventEmitter()
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   backToProductsPress(): void { 
     this.backToProducts.emit(true);
-    // navigate to products!
+    this.router.navigate(["/"]);
   }
 }

@@ -28,13 +28,7 @@ export class CartService {
     this.cartItems = {}
   }
 
-  updateQuantityById(id: number, quantity: number): void {
-    this.cartItems = {
-      ...this.cartItems,
-      [id.toString()]: {
-        ...this.cartItems[id.toString()],
-        quantity
-      }
-    }
+  updateQuantityById(id: number, newQuantity: number): void {
+    this.cartItems[id.toString()].quantity = newQuantity;
   }
 }

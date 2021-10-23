@@ -10,7 +10,7 @@
             type="number" 
             class="number-input" 
             value="{{cartItem.quantity}}" 
-            (change)="onQuantityChange(quantityInput.value)"
+            (ngModelChange)="onQuantityChange(quantityInput.value)"
         >
     </div>
 </div>
